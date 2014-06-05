@@ -9,10 +9,10 @@ token.indexes <- grep('<t ', lines)
 tokens <- lines[token.indexes]
 
 ## Lösche alles vor dem Lemma.
-junk.lemmas <- sub(".+ lemma='", "", tokens)
+junk.lemmas <- sub(".+ lemma=\"", "", tokens)
 
 ## Lösche alles nach dem Lemma.
-lemmas <- sub("'.+", '', junk.lemmas)
+lemmas <- sub("\".+", '', junk.lemmas)
 
 ## Anzahl der Types ist gleich Null.
 types.count <- 0
