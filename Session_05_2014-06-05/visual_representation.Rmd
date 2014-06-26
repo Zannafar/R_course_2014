@@ -58,6 +58,21 @@ wordcloud(names(sorted.matrix), sorted.matrix, scale=c(4,0.5),
 
     x <- data.frame(Wortart, TokenFrequenz, ..., row.names=Wortart)
 
+```{r dataframes, highlight = TRUE, echo = TRUE, cache = TRUE}
+
+Wortart <<- c("ADJ", "ADV", "N", "KONJ", "Praep")
+TokenFrequenz <<- c(421, 337, 1411, 458, 455)
+TypenFrequenz <<- c(271, 103, 735, 18, 37)
+Klasse <<- c("offen", "offen", "offen", "geschlossen", "geschlossen")
+
+x <- data.frame(Wortart, TokenFrequenz, TypenFrequenz, Klasse)
+str(x)
+x
+x <- data.frame(Wortart, TokenFrequenz, TypenFrequenz, Klasse, row.names=Wortart)
+str(x)
+x
+
+```
 
 ```{r dataframes, highlight = TRUE, echo = TRUE, cache = TRUE}
 wortart <- c("ADJ", "ADV", "N", "KONJ", "PREAP")
