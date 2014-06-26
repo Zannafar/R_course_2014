@@ -8,7 +8,7 @@ library(XML)
 tokens <- NULL
 
 xmlEventParse(
-  "../data/t_990505_47.xml", 
+  "../data/t_890102_141.xml", 
   handlers = list(
     't' = function(name, attr) {
       tokens <<- c(tokens, attr['word'])
@@ -58,6 +58,21 @@ wordcloud(names(sorted.matrix), sorted.matrix, scale=c(4,0.5),
 
     x <- data.frame(Wortart, TokenFrequenz, ..., row.names=Wortart)
 
+
+```{r dataframes, highlight = TRUE, echo = TRUE, cache = TRUE}
+wortart <- c("ADJ", "ADV", "N", "KONJ", "PREAP")
+TokenFrequenz <- c(421, 337, 1411, 458, 455)
+TypeFrequenz <- c(271, 103, 735, 18, 37)
+Klasse <- c("offen", "offen", "offen", "geschlossen", "geschlossen")
+
+x <- data.frame(wortart, TokenFrequenz, TypeFrequenz, Klasse)
+
+x
+
+y <- data.frame(wortart, TokenFrequenz, TypeFrequenz, Klasse, row.names=wortart)
+
+str(y)
+```
 
 ## Frames speichern:
   
